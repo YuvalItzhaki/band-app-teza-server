@@ -1,0 +1,29 @@
+# Node.js
+node_modules/
+
+# Logs
+*.log
+*.log.*
+
+# Environment variables
+.env
+
+# Temporary files
+*.env.local
+*.env.development.local
+*.env.test.local
+
+# npm package lock file (if you're using Yarn, exclude yarn.lock)
+package-lock.json
+
+# Optional: If you're using coverage tools
+coverage/
+
+# VS Code settings (if using VS Code)
+.vscode/
+
+# macOS system files
+.DS_Store
+
+# Other files
+*.tgz
