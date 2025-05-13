@@ -6,7 +6,6 @@ node_modules/
 *.log.*
 
 # Environment variables
-.env
 
 # Temporary files
 *.env.local
