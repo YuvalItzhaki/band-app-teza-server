@@ -27,23 +27,14 @@ app.get("/", (req, res) => {
   res.send("API is running...");
 });
 
-// mongoose
-//   .connect(process.env.MONGO_URI, {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-//   })
-//   .then(() => {
-//     console.log("✅ MongoDB connected");
-//     const port = process.env.PORT || 5001;
-//     app.listen(port, () => console.log(`🚀 Server running on port ${port}`));
-//   })
-//   .catch((err) => console.error("DB connection error:", err));
-const mongoURI = process.env.MONGO_URI;
-
 mongoose
-  .connect(mongoURI, {
+  .connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
-  .then(() => console.log("MongoDB connected"))
-  .catch((err) => console.log("DB connection error:", err));
+  .then(() => {
+    console.log("✅ MongoDB connected");
+    const port = process.env.PORT || 5001;
+    app.listen(port, () => console.log(`🚀 Server running on port ${port}`));
+  })
+  .catch((err) => console.error("DB connection error:", err));
